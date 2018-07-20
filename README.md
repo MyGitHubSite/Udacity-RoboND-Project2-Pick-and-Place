@@ -18,18 +18,31 @@ Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perfor
 
 Your writeup should contain a DH parameter table with proper notations and description about how you obtained the table. Make sure to use the modified DH parameters discussed in this lesson. Please add an annotated figure of the robot with proper link assignments and joint rotations (Example figure provided in the writeup template). It is strongly recommended that you use pen and paper to create this figure to get a better understanding of the robot kinematics.
 
-Insert KR210 graph
- 
-Insert hand-drawn labeling of joints, axes, and origins on graph
-Insert hand-drawn labeling of a, alpha, d, q values
-Insert hand drawn graph and table fo joint link lengths
+Insert KR210 graph ("zero configuration" - alll joint angles are assumed = 0.
+
+
+Insert hand-drawn labeling of joints, joint axes, links, positive and x axes(common normals between zi-1 zi), and reference frame origins (intersection of xi and zi) on graph, add gripper frame
+Insert hand-drawn labeling of each non-zero link lengths (a values), link offsets (d values) and alpha (z twist angle), q values
+  ai-1 = distance from zi-1-zi measured along xi-1 axis
+  di = signed distance x1-i-xi meaured along the zi axis
+  alphai = zi-1 - zi measured along the xi-1 axis according to the right hand rule
+  thetai = angle between xi-1 and xi measured about zi axis using right hand rule
+    for i=2 there is a -90 degree constant offset between x1 and x2.
+    
+  obtain a, d, and alphas from kr210.urdf.xacro file
+Insert gripper frame, account for difference between gripper reference frame in URDF vs. DH parameters
+ - rotate about z axis (180 degrees), then y axis (-90 degrees)
+
 Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
  
 Your writeup should contain individual transform matrices about each joint using the DH table and a homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link. These matrices can be created using any software of your choice or hand written. Also include an explanation on how you created these matrices.
  
 Insert Translation matrixes
-Insert Homogeneous transform between base link and gripper using just the end-effector pose (poistoin + rotation)
+Insert Homogeneous transform between base link and gripper using just the end-effector pose (position + rotation)
 Insert error correction
+
+#########################################################################
+#########################################################################
 
 Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
  
