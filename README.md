@@ -46,15 +46,15 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 
 <strong>Modified DH Parameter Table</strong>
 
-i | \alpha | a | d | theta
+**i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
 -- | ----- | - | - | -----
-0 | 0 | 0 | 0.75 | 
-1 | -pi/2 | 0.35 | 0 | theta2-pi/2
-2 | 0 | 1.25 | 0 | 
-3 | -pi/2 | -0.054 | 1.50 | 
-4 | pi/2 | 0 | 0 | 
-5 | -pi/2 | 0 | 0 | 
-G | 0 | 0 | 0.303 | 0 
+1 | 0 | 0 | 0.75 | 
+2 | -pi/2 | 0.35 | 0 | q2-pi/2
+3 | 0 | 1.25 | 0 | 
+4 | -pi/2 | -0.054 | 1.50 | 
+5 | pi/2 | 0 | 0 | 
+6 | -pi/2 | 0 | 0 | 
+7 (EE) | 0 | 0 | 0.303 | 0 
 
 
 
