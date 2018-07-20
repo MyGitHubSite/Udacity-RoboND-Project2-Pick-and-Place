@@ -25,7 +25,7 @@ Hand-drawn labeling of: joints, joint axes, links, positive and <strong>x</stron
 
 ![GitHub Logo](/images/AllLabels.jpg)  
 
-<strong>Modified DH Parameters Table</strong>
+<strong>Modified DH Parameter Table</strong>
 
 **i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
 :--: | :-----: | :-: | :-: | :-----:
@@ -46,15 +46,16 @@ for <strong>i</strong>=2 there is a -90 degree constant offset between <strong>x
 Note: <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>values were obtained from kr210.urdf.xacro file.  
 ___
 
-The DH parameter table above was plugged into the DH Transformation Matrix below to derive individual link to link transform matrices.
+The Modified DH parameter table above was plugged into the DH Transformation Matrix below to derive individual link to link transform matrices.
 
-#### Modified DH Transformation Matrix:
+#### DH Transformation Matrix:
     Matrix([[           cos(q),           -sin(q),           0,             a],  
             [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
             [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],  
             [                0,                 0,           0,             1]])  
 
-#### Individual Transformation Matrices (*Plug Modified DH Parameters into Modified DH Transformation Matrix)
+#### Individual Transformation Matrices
+(*Plug Modified DH Parameters into Modified DH Transformation Matrix)
 
     T0_1  = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0], [0, 0, 1, 0.75], [0, 0, 0, 1]])  
     T1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.35], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
@@ -64,16 +65,26 @@ The DH parameter table above was plugged into the DH Transformation Matrix below
 
     T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
 
-Insert gripper frame, account for difference between gripper reference frame in URDF vs. DH parameters
-
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
-#####  (*Rotate about <strong>z</strong> axis 180 degrees, then <strong>y</strong> axis -90 degrees)
+(*Rotate about <strong>z</strong> axis 180 degrees, then <strong>y</strong> axis -90 degrees)
     R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
     R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
-    R_corr = simplify(R_z * R_y)  
+    R_corr = R_z * R_y  
 
 #### Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
-    T_Total = simplify(T0_EE * R_corr)  
+    T_Total = T0_EE * R_corr  
+___
+##
+<Strong>
+**Inverse Kinematics
+</strong>
+
+<strong>
+Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
+ 
+Based on the geometric Inverse Kinematics method described here, breakdown the IK problem into Position and Orientation problems. Derive the equations for individual joint angles. Your writeup must contain details about the steps you took to arrive at those equations. Add figures where necessary. If any given joint has multiple solutions, select the best solution and provide explanation about your choice (Hint: Observe the active robot workspace in this project and the fact that some joints have physical limits).
+
+</strong>
 
 #### End-Effector position given by Px, Py, Pz
     EE = Matrix([[px], [py], [pz]])
@@ -87,13 +98,9 @@ Insert gripper frame, account for difference between gripper reference frame in 
 #### Wrist Center Location
     WC = EE - (0.303) * ROT_EE[:,2]
 
-<strong>
-Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
- 
-Based on the geometric Inverse Kinematics method described here, breakdown the IK problem into Position and Orientation problems. Derive the equations for individual joint angles. Your writeup must contain details about the steps you took to arrive at those equations. Add figures where necessary. If any given joint has multiple solutions, select the best solution and provide explanation about your choice (Hint: Observe the active robot workspace in this project and the fact that some joints have physical limits).
-</strong>
 Insert equations for individual joint angles.
 ![GitHub Logo](/images/logo.png)
+___
 
 <strong>
 Project Implementation
