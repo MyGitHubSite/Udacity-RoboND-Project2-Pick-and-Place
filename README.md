@@ -9,18 +9,15 @@
  4. Run Pick & Place in demo mode
  5. Perform kinematic analysis of robot and derive equations for individual joint angles.
  6. Write inverse kinematics code inside IK_server.py
- 7. Make brief write up.
-
-Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. Here is a template writeup for this project you can use as a guide and a starting point.  The writeup / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled. 
+ 7. Make brief write up that includes all the rubric points and how you addressed each one.  The writeup / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled. 
 
 ###
 **Kinematic Analysis**
 
-
 <font color="red">
-<strong>
+**
 Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.  Your writeup should contain a DH parameter table with proper notations and description about how you obtained the table. Make sure to use the modified DH parameters discussed in this lesson. Please add an annotated figure of the robot with proper link assignments and joint rotations (Example figure provided in the writeup template). It is strongly recommended that you use pen and paper to create this figure to get a better understanding of the robot kinematics.
-</strong>
+**
 
 Insert KR210 graph ("zero configuration" - all joint angles are assumed = 0.
 ![GitHub Logo](/images/logo.png)
