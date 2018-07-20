@@ -42,10 +42,15 @@ Insert gripper frame, account for difference between gripper reference frame in 
 
 Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
 
-First Header | Second Header
------------- | -------------
-Content Cell 1 | Content Cell 2
-Content column 1 | Content column 2
+i | alpha | a | d | theta
+- | ----- | - | - | _____
+0 | 0 | 0 | 0.75 | 
+1 | -pi/2 | 0.35 | 0 | theta2-pi/2
+2 | 0 | 1.25 | 0 | 
+3 | -pi/2 | -0.054 | 1.50 | 
+4 | pi/2 | 0 | 0 | 
+5 | -pi/2 | 0 | 0 | 
+G | 0 | 0 | 0.303 | 0 
 
 
 
