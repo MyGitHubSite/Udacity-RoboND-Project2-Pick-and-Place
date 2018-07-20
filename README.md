@@ -16,7 +16,7 @@ ___
 **Kinematic Analysis**
 
 <strong> 
-Start with the Kuka KR210 zero-configuration graph (all joint angles are assumed = 0)
+Start with the Kuka KR210 zero-configuration graph (all joint angles are assumed = 0), add gripper frame.  
 </strong>  
 
 ![Kuka KR210 Graph](/images/IMG_0084%20(2).jpg) 
