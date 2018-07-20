@@ -1,7 +1,7 @@
  **Udacity-RoboND-Project2-Pick-and-Place**
 
-##
-**Project Goals:**
+
+## **Project Goals:**
 
  1. Set Up Environment
  2. Explore forward kinematics with Kuka KR210 to learn more about the robot's geometry.
