@@ -39,12 +39,11 @@ Origin of frame **i** = intersection of **x<sub>i</sub>** and **z<sub>i</sub>**
 
 ![GitHub Logo](/images/logo.png)
 
-Insert gripper frame, account for difference between gripper reference frame in URDF vs. DH parameters
- - rotate about <strong>z</strong> axis (180 degrees), then <strong>y</strong> axis (-90 degrees)
+
 
 Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
 
-<strong>Modified DH Parameter Table</strong>
+<strong>Modified DH Parameters Table</strong>
 
 **i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
 :--: | :-----: | :-: | :-: | :-----:
@@ -62,13 +61,13 @@ Your writeup should contain individual transform matrices about each joint using
 
 The DH parameter table above was plugged into the general transformation matrix below to derive individual link to link transform matrices.
 
-#### General Link to Link Transformation Matrix:
+#### Modified DH Transformation Matrix:
     Matrix([[           cos(q),           -sin(q),           0,             a],  
             [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
             [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],  
             [                0,                 0,           0,             1]])  
 
-#### Transformations from Link i to Link j
+#### Individual Transformation Matrices
 
     T0_1  = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0], [0, 0, 1, 0.75], [0, 0, 0, 1]])  
     T1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.35], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
@@ -76,7 +75,10 @@ The DH parameter table above was plugged into the general transformation matrix 
     T3_6  = Matrix([[cos(q6), -sin(q6), 0, 0], [0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])  
     T6_EE = Matrix([[1, 0, 0, 0],[0, 1, 0, 0], [0, 0, 1, 0.303], [0, 0, 0, 1]])  
 
-    T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
+    T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
+
+Insert gripper frame, account for difference between gripper reference frame in URDF vs. DH parameters
+ - rotate about <strong>z</strong> axis (180 degrees), then <strong>y</strong> axis (-90 degrees)
 
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
     R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
@@ -85,6 +87,18 @@ The DH parameter table above was plugged into the general transformation matrix 
 
 #### Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
     T_Total = simplify(T0_EE * R_corr)  
+
+# End-Effector position given by Px, Py, Pz
+    EE = Matrix([[px], [py], [pz]])
+
+# End-Effector Orientation given by r, p, y
+    ROT_x = Matrix([[1, 0, 0], [0, cos(r), -sin(r)], [0, sin(r), cos(r)]])  # ROLL
+    ROT_y = Matrix([[cos(p), 0, sin(p)], 0, 1, 0], [ -sin(p), 0, cos(p)]])  # PITCH
+    ROT_z = Matrix([[cos(y), -sin(y), 0],[ sin(y), cos(y), 0], [0, 0, 1]])  # YAW
+    ROT_EE = ROT_z * ROT_y * ROT_x
+
+# Wrist Center Location
+    WC = EE - (0.303) * ROT_EE[:,2]
 
 <strong>
 Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
