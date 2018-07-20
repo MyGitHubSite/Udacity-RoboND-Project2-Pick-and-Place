@@ -37,13 +37,18 @@ Insert gripper frame, account for difference between gripper reference frame in 
  - rotate about z axis (180 degrees), then y axis (-90 degrees)
 
 Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
+![GitHub Logo](/images/logo.png)
 
 <strong>
 Your writeup should contain individual transform matrices about each joint using the DH table and a homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link. These matrices can be created using any software of your choice or hand written. Also include an explanation on how you created these matrices.
  </strong>
 Insert Translation matrixes
+![GitHub Logo](/images/logo.png)
 Insert Homogeneous transform between base link and gripper using just the end-effector pose (position + rotation)
+![GitHub Logo](/images/logo.png)
 Insert error correction
+![GitHub Logo](/images/logo.png)
+
 
 #########################################################################
 #########################################################################
@@ -53,6 +58,7 @@ Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse
 Based on the geometric Inverse Kinematics method described here, breakdown the IK problem into Position and Orientation problems. Derive the equations for individual joint angles. Your writeup must contain details about the steps you took to arrive at those equations. Add figures where necessary. If any given joint has multiple solutions, select the best solution and provide explanation about your choice (Hint: Observe the active robot workspace in this project and the fact that some joints have physical limits).
 </strong>
 Insert equations for individual joint angles.
+![GitHub Logo](/images/logo.png)
 
 <strong>
 Project Implementation
@@ -63,5 +69,8 @@ IK_server.py must contain properly commented code. The robot must track the plan
 </strong>
 
 Insert code explanations
+![GitHub Logo](/images/logo.png)
 Insert discussion of results
+![GitHub Logo](/images/logo.png)
 Insert screenshot of completed process
+![GitHub Logo](/images/logo.png)
