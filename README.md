@@ -24,7 +24,6 @@ Insert KR210 graph ("zero configuration" - all joint angles are assumed = 0.
 
 Insert hand-drawn labeling of joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, add gripper frame
 
-![GitHub Logo](/images/Labels-Large.png)) 
 ![GitHub Logo](/images/AllLabels-Large.png)) 
 
 Insert hand-drawn labeling of each non-zero link lengths (<strong>a</strong> values), link offsets (<strong>d</strong> values) and <strong>alpha</strong> (<strong>z</strong> twist angle), <strong>q</strong> values  
@@ -39,12 +38,6 @@ Origin of frame **i** = intersection of **x<sub>i</sub>** and **z<sub>i</sub>**
 
 obtain <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>s from kr210.urdf.xacro file
 
-![GitHub Logo](/images/logo.png)
-
-
-
-Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
-
 <strong>Modified DH Parameters Table</strong>
 
 **i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
@@ -57,11 +50,7 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 6 | -pi/2 | 0 | 0 | q5
 G | 0 | 0 | 0.303 |  q6
 
-<strong>
-Your writeup should contain individual transform matrices about each joint using the DH table and a homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link. These matrices can be created using any software of your choice or hand written. Also include an explanation on how you created these matrices.  
- </strong>
-
-The DH parameter table above was plugged into the general transformation matrix below to derive individual link to link transform matrices.
+The DH parameter table above was plugged into the DH Transformation Matrix below to derive individual link to link transform matrices.
 
 #### Modified DH Transformation Matrix:
     Matrix([[           cos(q),           -sin(q),           0,             a],  
