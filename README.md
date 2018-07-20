@@ -55,7 +55,7 @@ The Modified DH parameter table above was plugged into the DH Transformation Mat
             [                0,                 0,           0,             1]])  
 
 #### Individual Transformation Matrices
-(*Plug Modified DH Parameters into Modified DH Transformation Matrix)
+(Plug Modified DH Parameters into Modified DH Transformation Matrix)
 
     T0_1  = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0], [0, 0, 1, 0.75], [0, 0, 0, 1]])  
     T1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.35], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
@@ -66,7 +66,8 @@ The Modified DH parameter table above was plugged into the DH Transformation Mat
     T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
 
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
-(*Rotate about <strong>z</strong> axis 180 degrees, then <strong>y</strong> axis -90 degrees)
+(Rotate about <strong>z</strong> axis 180 degrees, then <strong>y</strong> axis -90 degrees)
+
     R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
     R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
     R_corr = R_z * R_y  
@@ -83,7 +84,6 @@ ___
 Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
  
 Based on the geometric Inverse Kinematics method described here, breakdown the IK problem into Position and Orientation problems. Derive the equations for individual joint angles. Your writeup must contain details about the steps you took to arrive at those equations. Add figures where necessary. If any given joint has multiple solutions, select the best solution and provide explanation about your choice (Hint: Observe the active robot workspace in this project and the fact that some joints have physical limits).
-
 </strong>
 
 #### End-Effector position given by Px, Py, Pz
