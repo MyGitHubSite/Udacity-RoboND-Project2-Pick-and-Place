@@ -16,9 +16,7 @@ Kinematic Analysis
 
 <font color="red">
 <strong>
-Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
-
-Your writeup should contain a DH parameter table with proper notations and description about how you obtained the table. Make sure to use the modified DH parameters discussed in this lesson. Please add an annotated figure of the robot with proper link assignments and joint rotations (Example figure provided in the writeup template). It is strongly recommended that you use pen and paper to create this figure to get a better understanding of the robot kinematics.
+Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.  Your writeup should contain a DH parameter table with proper notations and description about how you obtained the table. Make sure to use the modified DH parameters discussed in this lesson. Please add an annotated figure of the robot with proper link assignments and joint rotations (Example figure provided in the writeup template). It is strongly recommended that you use pen and paper to create this figure to get a better understanding of the robot kinematics.
 </strong>
 
 Insert KR210 graph ("zero configuration" - all joint angles are assumed = 0.
@@ -43,6 +41,13 @@ Insert gripper frame, account for difference between gripper reference frame in 
  - rotate about <strong>z</strong> axis (180 degrees), then <strong>y</strong> axis (-90 degrees)
 
 Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
+
+First Header | Second Header
+------------ | -------------
+Content Cell 1 | Content Cell 2
+Content column 1 | Content column 2
+
+
 
 ![GitHub Logo](/images/logo.png)
 
