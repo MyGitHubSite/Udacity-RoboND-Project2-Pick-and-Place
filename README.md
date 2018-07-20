@@ -21,16 +21,16 @@ Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perfor
 Your writeup should contain a DH parameter table with proper notations and description about how you obtained the table. Make sure to use the modified DH parameters discussed in this lesson. Please add an annotated figure of the robot with proper link assignments and joint rotations (Example figure provided in the writeup template). It is strongly recommended that you use pen and paper to create this figure to get a better understanding of the robot kinematics.
 </strong>
 
-Insert KR210 graph ("zero configuration" - alll joint angles are assumed = 0.
+Insert KR210 graph ("zero configuration" - all joint angles are assumed = 0.
 
 
-Insert hand-drawn labeling of joints, joint axes, links, positive and x axes(common normals between <strong>z<sub>i-1</sub> and z<sub>i</sub></strong>), and reference frame origins (intersection of x<sub>i</sub> and z<sub>i</sub>) on graph, add gripper frame
-Insert hand-drawn labeling of each non-zero link lengths (a values), link offsets (d values) and alpha (z twist angle), q values
+Insert hand-drawn labeling of joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i and 1</sub> and z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, add gripper frame
+Insert hand-drawn labeling of each non-zero link lengths (a values), link offsets (d values) and alpha (<strong>z</strong> twist angle), <strong>q</strong> values
   <strong>a<sub>i-1</sub></strong> = distance from <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along x<sub>i-1</sub> axis
-  d<sub>i</sub> = signed distance x<sub>i-1</sub>-xi meaured along the z<sub>i</sub> axis
+  <strong>d<sub>i</sub><<strong>strong> = signed distance <strong>x<sub>i-1<strong> and <strong>x<sub>i</sub>sub></strong> meaured along the <strong>z<sub>i</sub></strong> axis
   alphai = z<sub>i-1</sub> - zi measured along the x<sub>i-1</sub> axis according to the right hand rule
-  thetai = angle between x<sub>i-1</sub> and xi measured about z<sub>i</sub> axis using right hand rule
-    for i=2 there is a -90 degree constant offset between x<sub>1</sub> and x<sub>2</sub>.
+  thetai = angle between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub>sub></strong> measured about <strong>z<sub>i</sub></strong> axis using right hand rule
+    for <strong>i</strong>=2 there is a -90 degree constant offset between <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub></strong>.
     
   obtain a, d, and alphas from kr210.urdf.xacro file
 Insert gripper frame, account for difference between gripper reference frame in URDF vs. DH parameters
