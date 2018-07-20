@@ -54,7 +54,7 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 4 | -pi/2 | -0.054 | 1.50 | 0
 5 | pi/2 | 0 | 0 | 0
 6 | -pi/2 | 0 | 0 | 0
-7 (EE) | 0 | 0 | 0.303 | 0 
+G | 0 | 0 | 0.303 | 0 
 
 <strong>
 Your writeup should contain individual transform matrices about each joint using the DH table and a homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link. These matrices can be created using any software of your choice or hand written. Also include an explanation on how you created these matrices.  
