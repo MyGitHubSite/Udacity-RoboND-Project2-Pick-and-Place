@@ -64,58 +64,28 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 Your writeup should contain individual transform matrices about each joint using the DH table and a homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link. These matrices can be created using any software of your choice or hand written. Also include an explanation on how you created these matrices.
  </strong>
 Insert Translation matrixes
+
+#### Transformations from Link i to Link j
+TF0_1 = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0],[0, 0, 1, 0.750], [0, 0, 0, 1]])
+TF1_2 = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.350], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])
+TF2_3 = Matrix([[cos(q3), -sin(q3), 0, 1.250], [sin(q3),  cos(q3), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
+TF3_6 = Matrix([[cos(q6), -sin(q6), 0, 0], [0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])
+TF6_EE = Matrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0.303], [0, 0, 0, 1]])
+
+#### Transformation from Link 0 to End Effector
+T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
+
+#### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
+R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
+R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0], [0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])
+R_corr = simplify(R_z * R_y)
+
+## Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
+TF_Total = simplify(T0_EE * R_corr)
+
 ![GitHub Logo](/images/logo.png)
 Insert Homogeneous transform between base link and gripper using just the end-effector pose (position + rotation)
 
-## Transformation from Link 0 to Link 1
-TF0_1 = Matrix([[ cos(q1), -sin(q1),        0,        0    ],
-                [ sin(q1),  cos(q1),        0,        0    ],
-                [       0,        0,        1,        0.750],
-                [       0,        0,        0,        1    ]])
-
-## Transformation from Link 1 to Link 2
-TF1_2 = Matrix([[ cos(q2-pi/2), -sin(q2-pi/2),             0,             0.350],
-                [            0,             0,             1,             0    ],
-                [-sin(q2-pi/2), -cos(q2-pi/2),             0,             0    ],
-                [            0,             0,             0,             1    ]])
-
-## Transformation from Link 2 to Link 3
-TF2_3 = Matrix([[cos(q3), -sin(q3),        0,        1.250],
-               [ sin(q3),  cos(q3),        0,        0    ],
-               [       0,        0,        1,        0    ],
-               [       0,        0,        0,        1    ]])
-
-## Transformation from Link 3 to Link 6
-TF3_6 = Matrix([[ cos(q6), -sin(q6),        0,       0],
-                [       0,        0,        1,       0],
-                [-sin(q6), -cos(q6),        0,       0],
-                [       0,        0,        0,       1]])
-
-## Transformation from Link 0 to Link 1
-TF6_EE = Matrix([[1,    0,    0,    0    ],
-                 [0,    1,    0,    0    ],
-                 [0,    0,    1,    0.303],
-                 [0,    0,    0,    1    ]])
-
-## Transformation from Link 0 to Link 1
-T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
-
-## Correction Needed to Account for Orientation Difference between Definition of
-## Gripper Link in URDF vs. DH Convention
-R_z = Matrix([[ cos(pi), -sin(pi),        0,        0],
-              [ sin(pi),  cos(pi),        0,        0],
-              [       0,        0,        1,        0],
-              [       0,        0,        0,        1]])
-
-R_y = Matrix([[ cos(-pi/2),          0, sin(-pi/2),          0],
-              [          0,          1,          0,          0],
-              [-sin(-pi/2),          0, cos(-pi/2),          0],
-              [          0,          0,          0,          1]])
-R_corr = simplify(R_z * R_y)
-
-## Total Homogeneous Transform Between Base_Link and Gripper_link with
-## Orientation Correction Applied
-TF_Total = simplify(T0_EE * R_corr)
 
 ![GitHub Logo](/images/logo.png)
 Insert error correction
