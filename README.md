@@ -24,7 +24,7 @@ Your writeup should contain a DH parameter table with proper notations and descr
 Insert KR210 graph ("zero configuration" - alll joint angles are assumed = 0.
 
 
-Insert hand-drawn labeling of joints, joint axes, links, positive and x axes(common normals between z<sub>i-1</sub> z<sub>i</sub>), and reference frame origins (intersection of x<sub>i</sub> and z<sub>i</sub>) on graph, add gripper frame
+Insert hand-drawn labeling of joints, joint axes, links, positive and x axes(common normals between <strong>z<sub>i-1</sub> z<sub>i</sub></strong>), and reference frame origins (intersection of x<sub>i</sub> and z<sub>i</sub>) on graph, add gripper frame
 Insert hand-drawn labeling of each non-zero link lengths (a values), link offsets (d values) and alpha (z twist angle), q values
   a<sub>i-1</sub> = distance from z<sub>i-1</sub>-z<sub>i</sub> measured along x<sub>i-1</sub> axis
   d<sub>i</sub> = signed distance x<sub>i-1</sub>-xi meaured along the z<sub>i</sub> axis
