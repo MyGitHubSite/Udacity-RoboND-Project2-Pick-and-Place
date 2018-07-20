@@ -26,7 +26,7 @@ Start with the Kuka KR210 zero-configuration graph (all joint angles are assumed
 Hand-drawn labeling of joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, add gripper frame
 each non-zero link lengths (<strong>a</strong> values), link offsets (<strong>d</strong> values) and <strong>alpha</strong> (<strong>z</strong> twist angle), <strong>q</strong> values  
 
-![GitHub Logo](/images/AllLabels-Large.png)) 
+![GitHub Logo](/images/AllLabels.jpg)) 
 
 <strong>a<sub>i-1</sub></strong> = distance from <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along <strong>x<sub>i-1</sub></strong> axis  
 <strong>d<sub>i</sub></strong> = signed distance between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured along the <strong>z<sub>i</sub></strong> axis  
