@@ -24,7 +24,7 @@ Insert KR210 graph ("zero configuration" - all joint angles are assumed = 0.
 
 Insert hand-drawn labeling of joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, add gripper frame
 
-![GitHub Logo](/images/Labels-Med.png)) 
+![GitHub Logo](/images/Labels-Large.png)) 
 
 Insert hand-drawn labeling of each non-zero link lengths (<strong>a</strong> values), link offsets (<strong>d</strong> values) and <strong>alpha</strong> (<strong>z</strong> twist angle), <strong>q</strong> values  
 
