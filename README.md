@@ -40,7 +40,7 @@ Insert hand-drawn labeling of each non-zero link lengths (<strong>a</strong> val
 ![GitHub Logo](/images/logo.png)
 
 Insert gripper frame, account for difference between gripper reference frame in URDF vs. DH parameters
- - rotate about <strong>z<strong> axis (180 degrees), then <strong>y</strong> axis (-90 degrees)
+ - rotate about <strong>z</strong> axis (180 degrees), then <strong>y</strong> axis (-90 degrees)
 
 Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
 
