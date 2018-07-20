@@ -19,24 +19,23 @@
 **Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.  Your writeup should contain a DH parameter table with proper notations and description about how you obtained the table. Make sure to use the modified DH parameters discussed in this lesson. Please add an annotated figure of the robot with proper link assignments and joint rotations (Example figure provided in the writeup template). It is strongly recommended that you use pen and paper to create this figure to get a better understanding of the robot kinematics.
 </strong>
 
-Insert KR210 graph ("zero configuration" - all joint angles are assumed = 0.
+Start with the Kuka KR210 zero-configuration graph (all joint angles are assumed = 0)  
 ![Kuka KR210 Graph](/images/IMG_0084%20(2).jpg) 
 
-Insert hand-drawn labeling of joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, add gripper frame
+
+Hand-drawn labeling of joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, add gripper frame
+each non-zero link lengths (<strong>a</strong> values), link offsets (<strong>d</strong> values) and <strong>alpha</strong> (<strong>z</strong> twist angle), <strong>q</strong> values  
 
 ![GitHub Logo](/images/AllLabels-Large.png)) 
 
-Insert hand-drawn labeling of each non-zero link lengths (<strong>a</strong> values), link offsets (<strong>d</strong> values) and <strong>alpha</strong> (<strong>z</strong> twist angle), <strong>q</strong> values  
-  <strong>a<sub>i-1</sub></strong> = distance from <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along <strong>x<sub>i-1</sub></strong> axis  
-  <strong>d<sub>i</sub></strong> = signed distance between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured along the <strong>z<sub>i</sub></strong> axis  
- <strong>alpha<sub>i</sub></strong> = angle between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along the <strong>x<sub>i-1</sub></strong> axis according to the right hand rule  
- <strong>theta<sub>i</sub></strong> = angle between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured about <strong>z<sub>i</sub></strong> axis using right hand rule  
- 
+<strong>a<sub>i-1</sub></strong> = distance from <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along <strong>x<sub>i-1</sub></strong> axis  
+<strong>d<sub>i</sub></strong> = signed distance between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured along the <strong>z<sub>i</sub></strong> axis  
+<strong>alpha<sub>i</sub></strong> = angle between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along the <strong>x<sub>i-1</sub></strong> axis according to the right hand rule  
+<strong>theta<sub>i</sub></strong> = angle between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured about <strong>z<sub>i</sub></strong> axis using right hand rule  
 for <strong>i</strong>=2 there is a -90 degree constant offset between <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub></strong>.
+Origin (O<sub>i</sub> of frame **i** = intersection of **x<sub>i</sub>** and **z<sub>i</sub>**
 
-Origin of frame **i** = intersection of **x<sub>i</sub>** and **z<sub>i</sub>**
-
-obtain <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>s from kr210.urdf.xacro file
+Note: <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>values were obtained from kr210.urdf.xacro file.
 
 <strong>Modified DH Parameters Table</strong>
 
