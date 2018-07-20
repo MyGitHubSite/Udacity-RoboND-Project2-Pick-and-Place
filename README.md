@@ -60,13 +60,14 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 Your writeup should contain individual transform matrices about each joint using the DH table and a homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link. These matrices can be created using any software of your choice or hand written. Also include an explanation on how you created these matrices.
  </strong>
 
+
 The DH parameter table above was plugged into the general transformation matrix below to derive individual link to link transform matrices.
 
 #### General Link to Link Transformation Matrix:
     Matrix([[cos(q),           -sin(q),           0,             a],  
-            [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],  
-  		        [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],  
-     		     [                0,                 0,           0,             1]])  
+            [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
+            [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],  
+            [                0,                 0,           0,             1]])  
 
 #### Transformations from Link i to Link j
     TF0_1  = Matrix([[cos(q1), -sin(q1), 0, 0],[sin(q1), cos(q1), 0, 0],[0, 0, 1, 0.75],[0, 0, 0, 1]])  
