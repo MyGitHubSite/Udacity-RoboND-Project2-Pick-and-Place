@@ -47,13 +47,13 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 <strong>Modified DH Parameter Table</strong>
 
 **i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
-:-- | :-----: | :-: | :-: | :-----
-1 | 0 | 0 | 0.75 | 
+:--: | :-----: | :-: | :-: | :-----:
+1 | 0 | 0 | 0.75 | 0
 2 | -pi/2 | 0.35 | 0 | q2-pi/2
-3 | 0 | 1.25 | 0 | 
+3 | 0 | 1.25 | 0 | 0
 4 | -pi/2 | -0.054 | 1.50 | 
-5 | pi/2 | 0 | 0 | 
-6 | -pi/2 | 0 | 0 | 
+5 | pi/2 | 0 | 0 | 0
+6 | -pi/2 | 0 | 0 | 0
 7 (EE) | 0 | 0 | 0.303 | 0 
 
 
