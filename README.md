@@ -69,36 +69,23 @@ The DH parameter table above was plugged into the general transformation matrix 
             [                0,                 0,           0,             1]])  
 
 #### Transformations from Link i to Link j
-<font size="8">
-    T0_1  = Matrix([[cos(q1), -sin(q1), 0, 0],[sin(q1), cos(q1), 0, 0],[0, 0, 1, 0.75],[0, 0, 0, 1]])  
-    T1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.35],[0, 0, 1, 0],[-sin(q2-pi/2), -cos(q2-pi/2), 0, 0],[0, 0, 0, 1]])  
-    T2_3  = Matrix([[cos(q3), -sin(q3), 0, 1.25],[sin(q3), cos(q3), 0, 0],[0, 0, 1, 0],[0, 0, 0, 1]])  
-    T3_6  = Matrix([[cos(q6), -sin(q6), 0, 0],[0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])  
-    T6_EE = Matrix([[1, 0, 0, 0],[0, 1, 0, 0],[0, 0, 1, 0.303],[0, 0, 0, 1]])  
-<font size="12">
-#### Transformation from Link 0 to End Effector
-The complete homogeneous transform between the 'base_link' and the 'gripper_link' (end-effector) using just the end-effector pose (position + rotation) is given by:
 
-        |               . Px  |
-        |       RT      . Py  |
-    T = |               . Pz  |
-        | . . . . . . . . . . |
-        |  0    0    0  . 1   |
+    T0_1  = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0], [0, 0, 1, 0.75], [0, 0, 0, 1]])  
+    T1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.35], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
+    T2_3  = Matrix([[cos(q3), -sin(q3), 0, 1.25], [sin(q3), cos(q3), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
+    T3_6  = Matrix([[cos(q6), -sin(q6), 0, 0], [0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])  
+    T6_EE = Matrix([[1, 0, 0, 0],[0, 1, 0, 0], [0, 0, 1, 0.303], [0, 0, 0, 1]])  
 
-Which equates to:
-
-    T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE  
+    T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
-    R_z = Matrix([[cos(pi), -sin(pi), 0, 0],[sin(pi), cos(pi), 0, 0],[0, 0, 1, 0],[0, 0, 0, 1]])  
-    R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0],[-sin(-pi/2), 0, cos(-pi/2), 0],[0, 0, 0, 1]])  
+    R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
+    R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
     R_corr = simplify(R_z * R_y)  
 
 #### Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
     T_Total = simplify(T0_EE * R_corr)  
 
-#########################################################################
-#########################################################################
 <strong>
 Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
  
