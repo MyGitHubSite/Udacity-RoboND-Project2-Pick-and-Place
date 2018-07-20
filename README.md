@@ -55,7 +55,7 @@ The Modified DH parameter table above was plugged into the DH Transformation Mat
             [                0,                 0,           0,             1]])  
 
 #### Individual Transformation Matrices
-(Plug Modified DH Parameters into Modified DH Transformation Matrix)
+(Plug Modified DH Parameters into DH Transformation Matrix)
 
     T0_1  = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0], [0, 0, 1, 0.75], [0, 0, 0, 1]])  
     T1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.35], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
