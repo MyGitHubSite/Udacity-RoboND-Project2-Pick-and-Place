@@ -43,6 +43,7 @@ G | 0 | 0 | 0.303 |  q6
 for <strong>i</strong>=2 there is a -90 degree constant offset between <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub></strong>.
 
 Note: <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>values were obtained from kr210.urdf.xacro file.  
+___
 
 The DH parameter table above was plugged into the DH Transformation Matrix below to derive individual link to link transform matrices.
 
