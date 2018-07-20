@@ -76,12 +76,16 @@ The DH parameter table above was plugged into the general transformation matrix 
     TF6_EE = Matrix([[1, 0, 0, 0],[0, 1, 0, 0],[0, 0, 1, 0.303],[0, 0, 0, 1]])  
 
 #### Transformation from Link 0 to End Effector
-    
-    |                 . Px
-    |      R<sub>T</sub>. Py
-    |                 . Pz
-    | . . . . . . . . . . . .
-    |  0    0    0    . 1
+
+The complete homogeneous transform between the 'base_link' and the 'gripper_link' (end-effector) using just the end-effector pose (position + rotation) is given by:
+
+        |               . Px  |
+        |       RT      . Py  |
+    T = |               . Pz  |
+        | . . . . . . . . . . |
+        |  0    0    0  . 1   |
+
+Which equates to:
 
     T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE  
 
