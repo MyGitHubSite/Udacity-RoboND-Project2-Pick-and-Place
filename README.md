@@ -32,11 +32,11 @@ Insert hand-drawn labeling of each non-zero link lengths (<strong>a</strong> val
  <strong>alpha<sub>i</sub></strong> = angle between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along the <strong>x<sub>i-1</sub></strong> axis according to the right hand rule  
  <strong>theta<sub>i</sub></strong> = angle between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured about <strong>z<sub>i</sub></strong> axis using right hand rule  
  
-    for <strong>i</strong>=2 there is a -90 degree constant offset between <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub></strong>.
+for <strong>i</strong>=2 there is a -90 degree constant offset between <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub></strong>.
 
 Origin of frame **i** = intersection of **x<sub>i</sub>** and **z<sub>i</sub>**
 
-  obtain <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>s from kr210.urdf.xacro file
+obtain <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>s from kr210.urdf.xacro file
 
 ![GitHub Logo](/images/logo.png)
 
