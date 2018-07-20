@@ -46,15 +46,15 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 
 <strong>Modified DH Parameter Table</strong>
 
-**i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
-:--: | :-----: | :-: | :-: | :-----:
-1 | 0 | 0 | 0.75 | 0
-2 | -pi/2 | 0.35 | 0 | q2-pi/2
-3 | 0 | 1.25 | 0 | 0
-4 | -pi/2 | -0.054 | 1.50 | 0
-5 | pi/2 | 0 | 0 | 0
-6 | -pi/2 | 0 | 0 | 0
-7 (EE) | 0 | 0 | 0.303 | 0 
+    **i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
+    :--: | :-----: | :-: | :-: | :-----:
+    1 | 0 | 0 | 0.75 | 0
+    2 | -pi/2 | 0.35 | 0 | q2-pi/2
+    3 | 0 | 1.25 | 0 | 0
+    4 | -pi/2 | -0.054 | 1.50 | 0
+    5 | pi/2 | 0 | 0 | 0
+    6 | -pi/2 | 0 | 0 | 0
+    7 (EE) | 0 | 0 | 0.303 | 0 
 
 
 
@@ -66,22 +66,22 @@ Your writeup should contain individual transform matrices about each joint using
 Insert Translation matrixes
 
 #### Transformations from Link i to Link j
-TF0_1 = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0],[0, 0, 1, 0.750], [0, 0, 0, 1]])  
-TF1_2 = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.350], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
-TF2_3 = Matrix([[cos(q3), -sin(q3), 0, 1.250], [sin(q3),  cos(q3), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
-TF3_6 = Matrix([[cos(q6), -sin(q6), 0, 0], [0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])  
-TF6_EE = Matrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0.303], [0, 0, 0, 1]])  
+    TF0_1 = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0],[0, 0, 1, 0.750], [0, 0, 0, 1]])  
+    TF1_2 = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.350], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
+    TF2_3 = Matrix([[cos(q3), -sin(q3), 0, 1.250], [sin(q3),  cos(q3), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
+    TF3_6 = Matrix([[cos(q6), -sin(q6), 0, 0], [0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])  
+    TF6_EE = Matrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0.303], [0, 0, 0, 1]])  
 
 #### Transformation from Link 0 to End Effector
-T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE  
+    T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE  
 
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
-R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
-R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0], [0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
-R_corr = simplify(R_z * R_y)  
+    R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
+    R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0], [0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
+    R_corr = simplify(R_z * R_y)  
 
 ## Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
-TF_Total = simplify(T0_EE * R_corr)  
+    TF_Total = simplify(T0_EE * R_corr)  
 
 ![GitHub Logo](/images/logo.png)
 Insert Homogeneous transform between base link and gripper using just the end-effector pose (position + rotation)
