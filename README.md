@@ -43,7 +43,7 @@ Insert gripper frame, account for difference between gripper reference frame in 
 Insert hand drawn image of modified DH table with corresponding hand drawn calculations of each link
 
 i | alpha | a | d | theta
-- | ----- | - | - | _____
+-- | ----- | - | - | -----
 0 | 0 | 0 | 0.75 | 
 1 | -pi/2 | 0.35 | 0 | theta2-pi/2
 2 | 0 | 1.25 | 0 | 
