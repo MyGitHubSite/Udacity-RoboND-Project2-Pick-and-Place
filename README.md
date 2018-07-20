@@ -10,6 +10,7 @@
  5. Perform kinematic analysis of robot and derive equations for individual joint angles.
  6. Write inverse kinematics code inside IK_server.py
  7. Make brief write up that includes all the rubric points and how you addressed each one.  The writeup / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled. 
+___
 
 ###
 **Kinematic Analysis**
