@@ -67,8 +67,7 @@ The DH parameter table above was plugged into the general transformation matrix 
             [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],  
             [                0,                 0,           0,             1]])  
 
-#### Individual Transformation Matrices
-#####  *Plug Modified DH Parameters into Modified DH Transformation Matrix
+#### Individual Transformation Matrices (*Plug Modified DH Parameters into Modified DH Transformation Matrix)
 
     T0_1  = Matrix([[cos(q1), -sin(q1), 0, 0], [sin(q1), cos(q1), 0, 0], [0, 0, 1, 0.75], [0, 0, 0, 1]])  
     T1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.35], [0, 0, 1, 0], [-sin(q2-pi/2), -cos(q2-pi/2), 0, 0], [0, 0, 0, 1]])  
@@ -79,9 +78,9 @@ The DH parameter table above was plugged into the general transformation matrix 
     T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
 
 Insert gripper frame, account for difference between gripper reference frame in URDF vs. DH parameters
- - rotate about <strong>z</strong> axis (180 degrees), then <strong>y</strong> axis (-90 degrees)
 
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
+#####  (*Rotate about <strong>z</strong> axis 180 degrees, then <strong>y</strong> axis -90 degrees)
     R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
     R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
     R_corr = simplify(R_z * R_y)  
