@@ -88,16 +88,16 @@ Insert gripper frame, account for difference between gripper reference frame in 
 #### Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
     T_Total = simplify(T0_EE * R_corr)  
 
-# End-Effector position given by Px, Py, Pz
+#### End-Effector position given by Px, Py, Pz
     EE = Matrix([[px], [py], [pz]])
 
-# End-Effector Orientation given by r, p, y
+#### End-Effector Orientation given by r, p, y (plug r, p y into Modified DH Transformation Matrix)
     ROT_x = Matrix([[1, 0, 0], [0, cos(r), -sin(r)], [0, sin(r), cos(r)]])  # ROLL
     ROT_y = Matrix([[cos(p), 0, sin(p)], 0, 1, 0], [ -sin(p), 0, cos(p)]])  # PITCH
     ROT_z = Matrix([[cos(y), -sin(y), 0],[ sin(y), cos(y), 0], [0, 0, 1]])  # YAW
     ROT_EE = ROT_z * ROT_y * ROT_x
 
-# Wrist Center Location
+#### Wrist Center Location
     WC = EE - (0.303) * ROT_EE[:,2]
 
 <strong>
