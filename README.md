@@ -66,10 +66,10 @@ Your writeup should contain individual transform matrices about each joint using
 Insert Translation matrixes
 
 #### Transformations from Link i to Link j
-    TF0_1  = Matrix([[cos(q1), -sin(q1), 0, 0],[sin(q1), cos(q1), 0, 0],[0, 0, 1, 0.750],[0, 0, 0, 1]])  
-    TF1_2  = Matrix([[cos(q2-pi/2), -sin(q2-pi/2), 0, 0.350],[0, 0, 1, 0],[-sin(q2-pi/2), -cos(q2-pi/2), 0, 0],[0, 0, 0, 1]])  
-    TF2_3  = Matrix([[cos(q3), -sin(q3), 0, 1.250],[sin(q3), cos(q3), 0, 0],[0, 0, 1, 0],[0, 0, 0, 1]])  
-    TF3_6  = Matrix([[cos(q6), -sin(q6), 0, 0],[0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])  
+    TF0_1  = Matrix([[cos(**q1**), -sin(**q1**), 0, 0],[sin(**q1**), cos(**q1**), 0, 0],[0, 0, 1, 0.75],[0, 0, 0, 1]])  
+    TF1_2  = Matrix([[cos(**q2**-pi/2), -sin(**q2**-pi/2), 0, 0.35],[0, 0, 1, 0],[-sin(**q2**-pi/2), -cos(**q2**-pi/2), 0, 0],[0, 0, 0, 1]])  
+    TF2_3  = Matrix([[cos(**q3**), -sin(**q3**), 0, 1.25],[sin(**q3**), cos(**q3**), 0, 0],[0, 0, 1, 0],[0, 0, 0, 1]])  
+    TF3_6  = Matrix([[cos(**q6**), -sin(**q6**), 0, 0],[0, 0, 1, 0], [-sin(**q6**), -cos(**q6**), 0, 0], [0, 0, 0, 1]])  
     TF6_EE = Matrix([[1, 0, 0, 0],[0, 1, 0, 0],[0, 0, 1, 0.303],[0, 0, 0, 1]])  
 
 #### Transformation from Link 0 to End Effector
