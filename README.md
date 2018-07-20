@@ -1,8 +1,7 @@
- ####
  **Udacity-RoboND-Project2-Pick-and-Place**
 
 ##
-**Project Goals:**
+**Project Goals:
 
  1. Set Up Environment
  2. Explore forward kinematics with Kuka KR210 to learn more about the robot's geometry.
@@ -15,7 +14,7 @@
 Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. Here is a template writeup for this project you can use as a guide and a starting point.  The writeup / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled. 
 
 ###
-**Kinematic Analysis**
+**Kinematic Analysis
 
 
 <font color="red">
