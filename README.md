@@ -20,7 +20,7 @@
 </strong>
 
 Insert KR210 graph ("zero configuration" - all joint angles are assumed = 0.
-![Kuka KR210 Graph](/images/IMG_0084%20(2).jpg)
+![Kuka KR210 Graph](/images/IMG_0084%20(2).jpg) 
 
 Insert hand-drawn labeling of joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, add gripper frame
 
