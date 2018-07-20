@@ -46,7 +46,7 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 
 <strong>Modified DH Parameter Table</strong>
 
-i | /alpha | a | d | theta
+i | \alpha | a | d | theta
 -- | ----- | - | - | -----
 0 | 0 | 0 | 0.75 | 
 1 | -pi/2 | 0.35 | 0 | theta2-pi/2
