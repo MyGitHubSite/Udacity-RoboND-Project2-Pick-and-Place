@@ -46,19 +46,15 @@ Insert hand drawn image of modified DH table with corresponding hand drawn calcu
 
 <strong>Modified DH Parameter Table</strong>
 
-    **i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
-    :--: | :-----: | :-: | :-: | :-----:
-    1 | 0 | 0 | 0.75 | 0
-    2 | -pi/2 | 0.35 | 0 | q2-pi/2
-    3 | 0 | 1.25 | 0 | 0
-    4 | -pi/2 | -0.054 | 1.50 | 0
-    5 | pi/2 | 0 | 0 | 0
-    6 | -pi/2 | 0 | 0 | 0
-    7 (EE) | 0 | 0 | 0.303 | 0 
-
-
-
-![GitHub Logo](/images/logo.png)
+**i** | **alpha<sub>i-1</sub>** | **a<sub>i-1</sub>** | **d<sub>i</sub>** | **theta (q<sub>i</sub>)**
+:--: | :-----: | :-: | :-: | :-----:
+1 | 0 | 0 | 0.75 | 0
+2 | -pi/2 | 0.35 | 0 | q2-pi/2
+3 | 0 | 1.25 | 0 | 0
+4 | -pi/2 | -0.054 | 1.50 | 0
+5 | pi/2 | 0 | 0 | 0
+6 | -pi/2 | 0 | 0 | 0
+7 (EE) | 0 | 0 | 0.303 | 0 
 
 <strong>
 Your writeup should contain individual transform matrices about each joint using the DH table and a homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link. These matrices can be created using any software of your choice or hand written. Also include an explanation on how you created these matrices.
@@ -67,10 +63,10 @@ Your writeup should contain individual transform matrices about each joint using
 The DH parameter table above was plugged into the general transformation matrix below to derive individual link to link transform matrices.
 
 #### General Link to Link Transformation Matrix:
-    Matrix([[cos(q),           -sin(q),           0,             a],
-            [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
-  		        [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],
-     		     [                0,                 0,           0,             1]])
+    Matrix([[cos(q),           -sin(q),           0,             a],  
+            [sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],  
+  		        [sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],  
+     		     [                0,                 0,           0,             1]])  
 
 #### Transformations from Link i to Link j
     TF0_1  = Matrix([[cos(q1), -sin(q1), 0, 0],[sin(q1), cos(q1), 0, 0],[0, 0, 1, 0.75],[0, 0, 0, 1]])  
@@ -89,15 +85,6 @@ The DH parameter table above was plugged into the general transformation matrix 
 
 ## Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
     TF_Total = simplify(T0_EE * R_corr)  
-
-![GitHub Logo](/images/logo.png)
-Insert Homogeneous transform between base link and gripper using just the end-effector pose (position + rotation)
-
-
-![GitHub Logo](/images/logo.png)
-Insert error correction
-![GitHub Logo](/images/logo.png)
-
 
 #########################################################################
 #########################################################################
