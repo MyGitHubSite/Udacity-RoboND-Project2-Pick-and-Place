@@ -107,8 +107,8 @@ Insert image of spherical wrist
 #### Wrist Center Location
     WC = EE - (0.303) * ROT_EE[:,2]
 
-Insert equations for individual joint angles.
-![GitHub Logo](/images/Theta1.jpg)
+Insert equations for individual joint angles.  
+![Theta1](/images/Theta1.jpg)
 
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 ___
