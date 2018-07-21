@@ -89,10 +89,9 @@ Based on the geometric Inverse Kinematics method described here, breakdown the I
 
 Since the last three joints are revolute and their joint axes intersect at a single point, we have a case of spherical wrist with joint_5 being the common intersection point and hence the wrist center.  We can kinematically decouple the IK problem into Inverse Position and Inverse Orientation 
 
-The position of the wrist centre is governed by the first three joints.
-Physically speaking, a six degree of freedom serial manipulator with a spherical wrist would use the first three joints to control the position of the wrist center while the last three joints would orient the end effector as needed. 
-Insert image of spherical wrist
+The position of the wrist centre is governed by the first three joints while the last three joints orient the end-effector as needed.  
 
+![Spherical Wrist](/images/Spherical Wrist.jpg) 
 
 #### End-Effector position given by Px, Py, Pz
     EE = Matrix([[px], [py], [pz]])
