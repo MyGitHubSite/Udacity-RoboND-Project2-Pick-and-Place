@@ -164,7 +164,7 @@ Using Rviz and Gazebo I was able to test out my code.  Fortunately, I was able t
 
 ![Final Run](/images/FinalRun.jpg)  
 
-I did not have any problems with calculations taking to long or the simuations running slowly, perhaps because I took advantage of the helpful coding tips from the lecture.  I did find that the robot seemed to move very inefficiently  (i.e., many of the moves needed to get to the target and drop zone seemed wasteful).  However, the robot did successfully complete the pick and place the vast majority of the time.
+I did not have any problems with calculations taking too long or the simuations running slowly, perhaps because I took advantage of the helpful coding tips from the lecture.  I did find that the robot seemed to move very inefficiently  (i.e., many of the moves needed to get to the target and drop zone seemed wasteful).  However, the robot did successfully complete the pick and place the vast majority of the time.
 
 
 
