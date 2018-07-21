@@ -76,16 +76,8 @@ The Modified DH parameter table above was plugged into the DH Transformation Mat
     ROT_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
     ROT_corr = ROT_z * ROT_y  
 ___
-##
-<Strong>
-**Inverse Kinematics  
-</strong>
-
-<strong>
-Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
- 
-Based on the geometric Inverse Kinematics method described here, breakdown the IK problem into Position and Orientation problems. Derive the equations for individual joint angles. Your writeup must contain details about the steps you took to arrive at those equations. Add figures where necessary. If any given joint has multiple solutions, select the best solution and provide explanation about your choice (Hint: Observe the active robot workspace in this project and the fact that some joints have physical limits).
-</strong>
+###
+**Inverse Kinematics**  
 
 Since the last three joints are revolute and their joint axes intersect at a single point, we have a spherical wrist with Joint 5 being the common intersection point and hence the wrist center.  We can kinematically decouple the IK problem into Inverse Position and Inverse Orientation 
 
@@ -113,7 +105,7 @@ ___
 
 ![Theta1](/images/Theta1.jpg)
 
-The point zc could be considered to be the wrist center of a spherical wrist. To find 𝜃1, project zc onto the ground plane.  Thus, 
+The point <strong>z<sub>c</sub></strong> could be considered to be the wrist center of a spherical wrist. To find theta1, project <strong>z<sub>c</sub></strong> onto the ground plane.  Thus, 
 
     theta1 = atan2(yc, xc)  [Note: per the kr210.urdf.xacro file the angle is limited to +/- 185 degrees.]
 
@@ -121,18 +113,20 @@ The point zc could be considered to be the wrist center of a spherical wrist. To
 
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 
-    # SSS triangle for theta2 and theta3 (Law of Cosines)
-    # sides
+We can use the Law of Cosines to caluclate theta 2 and theta 3
+
+    Sides:
        A = 1.501
        B = sqrt(pow((sqrt(WC[0]*WC[0] + WC[1]*WC[1]) - 0.35), 2) + pow((WC[2] - 0.75), 2))
        C = 1.25
-    # angles
+       
+    Angles:
        a = acos((B*B + C*C - A*A) / (2*B*C))
        b = acos((A*A + C*C - B*B) / (2*A*C))
        c = acos((A*A + B*B - C*C) / (2*A*B))
 
-       theta2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35), limited between -45 and 85 degrees
-       theta3 = (pi/2 - b + 0.036), limited between -210 and 65 degrees
+       theta2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35) [limited between -45 and 85 degrees]
+       theta3 = (pi/2 - b + 0.036) [limited between -210 and 65 degrees]
 
 **Theta 4, 5, and 6:**  
 
