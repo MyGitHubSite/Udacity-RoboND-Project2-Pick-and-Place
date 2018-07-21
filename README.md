@@ -65,17 +65,16 @@ The Modified DH parameter table above was plugged into the DH Transformation Mat
     T5_6 = Matrix([[cos(q6), -sin(q6), 0, 0], [0, 0, 1, 0], [-sin(q6), -cos(q6), 0, 0], [0, 0, 0, 1]])  
     T6_EE = Matrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0.303], [0, 0, 0, 1]])  
 
-    T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
+#### Total Homogeneous Transform Between Base_Link and Gripper_link
+
+T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
 
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
 (Rotate about <strong>z</strong> axis 180 degrees, then <strong>y</strong> axis -90 degrees)
 
-    R_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
-    R_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
-    R_corr = R_z * R_y  
-
-#### Total Homogeneous Transform Between Base_Link and Gripper_link with Orientation Correction Applied
-    T_Total = T0_EE * R_corr  
+    ROT_z = Matrix([[cos(pi), -sin(pi), 0, 0], [sin(pi), cos(pi), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])  
+    ROT_y = Matrix([[cos(-pi/2), 0, sin(-pi/2), 0],[0, 1, 0, 0], [-sin(-pi/2), 0, cos(-pi/2), 0], [0, 0, 0, 1]])  
+    ROT_corr = ROT_z * ROT_y  
 ___
 ##
 <Strong>
