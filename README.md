@@ -138,12 +138,15 @@ We can use the Law of Cosines to calculate theta 2 and theta 3:
 
 **Theta 4, 5, and 6:**  
 
-#### Extract rotation matrix R0_3 from transformation matrix T0_3 then substitute angles q1-3  
+#### Extract the rotation matrix R0_3 from transformation matrix T0_3 and then substitute angles q1-3  
         R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
         R0_3 = R0_3.evalf(subs={q1: theta1, q2: theta2, q3:theta3})
+        
+#### The rotation of R3-6 can be found by backing out R0-3 from the total rotation ROT_EE.        
+        
         R3_6 = R0_3.inv(method="LU") * ROT_EE
 
-#### Euler angles from rotation matrix  
+#### Euler angles from rotation matrix can then be found: 
         theta4 = atan2(R3_6[2,2], -R3_6[0,2]), limited between -350 and 350 degrees
         theta5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]*R3_6[2, 2]), R3_6[1, 2]), limited between -125 and 125 degrees
         theta6 = atan2(-R3_6[1,1],R3_6[1,0]), limited between -350 and 350 degrees
