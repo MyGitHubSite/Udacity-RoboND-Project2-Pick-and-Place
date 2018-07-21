@@ -31,11 +31,11 @@ Hand-drawn labeling of: joints, joint axes, links, positive and <strong>x</stron
 :--: | :-----: | :-: | :-: | :-----:
 1 | 0 | 0 | 0.75 | q1
 2 | -pi/2 | 0.35 | 0 | q2-pi/2
-3 | 0 | 1.25 | 0 | q2
-4 | -pi/2 | -0.054 | 1.50 | q3
-5 | pi/2 | 0 | 0 | q4
-6 | -pi/2 | 0 | 0 | q5
-G | 0 | 0 | 0.303 |  q6
+3 | 0 | 1.25 | 0 | q3
+4 | -pi/2 | -0.054 | 1.50 | q4
+5 | pi/2 | 0 | 0 | q5
+6 | -pi/2 | 0 | 0 | q6
+G | 0 | 0 | 0.303 |  q7
 
 <strong>a<sub>i-1</sub></strong> = distance from <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong> measured along <strong>x<sub>i-1</sub></strong> axis  
 <strong>d<sub>i</sub></strong> = signed distance between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured along the <strong>z<sub>i</sub></strong> axis  
