@@ -67,7 +67,7 @@ The Modified DH parameter table above was plugged into the DH Transformation Mat
 
 #### Total Homogeneous Transform Between Base_Link and Gripper_link
 
-T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
+    T0_EE = T0_1 * T1_2 * T2_3 * T3_6 * T6_EE
 
 #### Correction Needed to Account for Orientation Difference between Definition of Gripper Link in URDF vs. DH Convention
 (Rotate about <strong>z</strong> axis 180 degrees, then <strong>y</strong> axis -90 degrees)
