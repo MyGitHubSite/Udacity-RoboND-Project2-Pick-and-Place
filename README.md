@@ -102,11 +102,15 @@ Insert image of spherical wrist
     ROT_z = Matrix([[cos(y), -sin(y), 0],[ sin(y), cos(y), 0], [0, 0, 1]])  # YAW
     ROT_EE = ROT_z * ROT_y * ROT_x
 
+![Wrist Center Location](/images/WristCenter.jpg) 
+
 #### Wrist Center Location
     WC = EE - (0.303) * ROT_EE[:,2]
 
 Insert equations for individual joint angles.
 ![GitHub Logo](/images/logo.png)
+
+![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 ___
 
 <strong>
@@ -119,7 +123,12 @@ IK_server.py must contain properly commented code. The robot must track the plan
 
 Insert code explanations
 ![GitHub Logo](/images/logo.png)
+
 Insert discussion of results
 ![GitHub Logo](/images/logo.png)
-Insert screenshot of completed process
-![GitHub Logo](/images/logo.png)
+
+####Insert screenshot of completed process
+
+I was able to get 9/10 cylinders in the bucket with my code.
+
+![Final Run](/images/FinalRun.jpg)
