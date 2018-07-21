@@ -109,11 +109,11 @@ The point <strong>z<sub>c</sub></strong> could be considered to be the wrist cen
 
     theta1 = atan2(yc, xc)  [Note: per the kr210.urdf.xacro file the angle is limited to +/- 185 degrees.]
 
-**Theta 2:**  
+**Theta 2and 3:**  
 
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 
-We can use the Law of Cosines to caluclate theta 2 and theta 3
+We can use the Law of Cosines to calculate theta 2 and theta 3:
 
     Sides:
        A = 1.501
