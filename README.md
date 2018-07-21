@@ -115,7 +115,7 @@ ___
 
 The point <strong>z<sub>c</sub></strong> could be considered to be the wrist center of a spherical wrist. To find theta1, project <strong>z<sub>c</sub></strong> onto the ground plane.  Thus, 
 
-    theta1 = atan2(yc, xc)  [Note: per the kr210.urdf.xacro file the angle is limited to +/- 185 degrees.]
+    theta1 = atan2(yc, xc)  
 
 **Theta 2 and 3:**  
 
@@ -133,8 +133,8 @@ We can use the Law of Cosines to calculate theta 2 and theta 3:
        b = acos((A*A + C*C - B*B) / (2*A*C))
        c = acos((A*A + B*B - C*C) / (2*A*B))
 
-       theta2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35) [limited between -45 and 85 degrees]
-       theta3 = (pi/2 - b - 0.036) [limited between -210 and 65 degrees]
+       theta2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35)  
+       theta3 = (pi/2 - b - 0.036)  
 
 **Theta 4, 5, and 6:**  
 
@@ -147,9 +147,9 @@ We can use the Law of Cosines to calculate theta 2 and theta 3:
         R3_6 = R0_3.inv(method="LU") * ROT_EE
 
 #### Euler angles from the R3_6 rotation matrix can then be found: 
-        theta4 = atan2(R3_6[2,2], -R3_6[0,2]), limited between -350 and 350 degrees
-        theta5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]*R3_6[2, 2]), R3_6[1, 2]), limited between -125 and 125 degrees
-        theta6 = atan2(-R3_6[1,1],R3_6[1,0]), limited between -350 and 350 degrees
+        theta4 = atan2(R3_6[2,2], -R3_6[0,2])  
+        theta5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]*R3_6[2, 2]), R3_6[1, 2])  
+        theta6 = atan2(-R3_6[1,1],R3_6[1,0])  
 ___
 
 <strong>
