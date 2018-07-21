@@ -105,7 +105,7 @@ Therefore, if:
 
 then:  
 
-    WC = EE - (0.303) * ROT_EE[:,2]
+    WC = EE - (0.303) * ROT_EE[:,2], where 0.303 comes from the Modified DH Parameter Table for dG
 ___
 #### Calcuation of individual joint angles:
 
