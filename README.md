@@ -155,14 +155,17 @@ ___
 Project Implementation
 </strong>
 
-Insert code explanations
+I was able to get the VM Ware environment set up on my local machine.  First off I ran the demo and observed the behavior of the robot.  Also, I fiddled around with the parameters in Rviz to visualize some extra movements.
 
-I was able to get 9/10 cylinders in the bucket with my code.
+For the test, I streamlined my IK_server.py code by creating functions for the DH transforms and the rotational matrices.  I grapped the DH parameters from the urdf file and plugged them into the code.  I then worked out all the other pieces for the project and split  them into a forward kinematics section and an inverse kinetamtics section. My forward kinematics sections put all code that did not need pose information in order to reduce computations in the inverse kinematics loop.  The individual transforms between L3 and link G were not needed so I took out those calculations.  
+
+Using Rviz and Gazebo I was able to test out my code.  Fortunately, I was able to get 9/10 cylinders in the bucket.  Here is a screenshot after 10 runs:  
+
 ![Final Run](/images/FinalRun.jpg)
 
-Insert discussion of results
+I did not have any problems with calcualtions taking to long or the simuations running slowly, perhaps because I took advantage of the helpful coding tips from the lecture.  I did find that the robot seemed to move very inefficiently  (i.e., many of the moves needed to get to the target and drop zone seemed wasteful.)  However, the robot did successfully complete the pick and place the vast majority of the time.
 
-The robot moved very efficiently.  THe number of moves to get to the target and drop zone was too large to be optimal.  However, the robot did successfully complete the pick and place the vast majority of the time.
+
 
 
 
