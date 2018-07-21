@@ -91,7 +91,7 @@ Since the last three joints are revolute and their joint axes intersect at a sin
 
 The position of the wrist centre is governed by the first three joints while the last three joints orient the end-effector as needed.  
 
-![Spherical Wrist](/images/Spherical Wrist.jpg) 
+![Spherical Wrist](/images/Spherical%20Wrist.jpg) 
 
 #### End-Effector position given by Px, Py, Pz
     EE = Matrix([[px], [py], [pz]])
