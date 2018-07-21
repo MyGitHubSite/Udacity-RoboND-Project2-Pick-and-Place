@@ -85,9 +85,6 @@ The position of the wrist center is governed by the first three joints while the
 
 ![Spherical Wrist](/images/Spherical%20Wrist.jpg) 
 
-#### End-Effector position given by Px, Py, Pz
-    EE = Matrix([[px], [py], [pz]])
-
 #### End-Effector Orientation given by r, p, y (plug r, p y into Modified DH Transformation Matrix)
     ROT_x = Matrix([[1, 0, 0], [0, cos(r), -sin(r)], [0, sin(r), cos(r)]])  # ROLL
     ROT_y = Matrix([[cos(p), 0, sin(p)], 0, 1, 0], [ -sin(p), 0, cos(p)]])  # PITCH
@@ -101,7 +98,12 @@ The position of the wrist center is governed by the first three joints while the
 
 ![Wrist Center Location](/images/WristCenter.jpg) 
 
-Therefore:
+Therefore, if:  
+
+#### End-Effector position given by Px, Py, Pz
+    EE = Matrix([[px], [py], [pz]])
+
+then:  
 
     WC = EE - (0.303) * ROT_EE[:,2]
 ___
