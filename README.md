@@ -92,7 +92,10 @@ The position of the wrist center is governed by the first three joints while the
     ROT_x = Matrix([[1, 0, 0], [0, cos(r), -sin(r)], [0, sin(r), cos(r)]])  # ROLL
     ROT_y = Matrix([[cos(p), 0, sin(p)], 0, 1, 0], [ -sin(p), 0, cos(p)]])  # PITCH
     ROT_z = Matrix([[cos(y), -sin(y), 0],[ sin(y), cos(y), 0], [0, 0, 1]])  # YAW
-    ROT_EE = ROT_z * ROT_y * ROT_x
+    
+#### If we include the correction needed to account for the orientation difference between the definition of the gripper link in URDF vs. DH Convention, the total rotation becomes:
+
+    ROT_EE = ROT_z * ROT_y * ROT_x * ROT_corr
 
 ![Wrist Center Location](/images/WristCenter.jpg) 
 
