@@ -97,9 +97,12 @@ The position of the wrist center is governed by the first three joints while the
 
     ROT_EE = ROT_z * ROT_y * ROT_x * ROT_corr
 
+#### The Wrist Center (WC) location is given by:
+
 ![Wrist Center Location](/images/WristCenter.jpg) 
 
-#### Wrist Center Location
+Therefore:
+
     WC = EE - (0.303) * ROT_EE[:,2]
 ___
 #### Calcuation of individual joint angles:
