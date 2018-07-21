@@ -124,7 +124,7 @@ The point <strong>z<sub>c</sub></strong> could be considered to be the wrist cen
 We can use the Law of Cosines to calculate theta 2 and theta 3:
 
     Sides:
-       A = 1.501
+       A = 1.500972    = sqrt[ (1.5^2)  + (-0.054)^2 ]
        B = sqrt(pow((sqrt(WC[0]*WC[0] + WC[1]*WC[1]) - 0.35), 2) + pow((WC[2] - 0.75), 2))
        C = 1.25
        
@@ -134,7 +134,7 @@ We can use the Law of Cosines to calculate theta 2 and theta 3:
        c = acos((A*A + B*B - C*C) / (2*A*B))
 
        theta2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35) [limited between -45 and 85 degrees]
-       theta3 = (pi/2 - b + 0.036) [limited between -210 and 65 degrees]
+       theta3 = (pi/2 - b - 0.036) [limited between -210 and 65 degrees]
 
 **Theta 4, 5, and 6:**  
 
