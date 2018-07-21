@@ -115,15 +115,15 @@ ___
 
 The point zc could be considered to be the wrist center of a spherical wrist. To find 𝜃1, project zc onto the ground plane.  Thus, 
 
-    θ1 = atan2(yc, xc)  [Note: per the kr210.urdf.xacro file the angle is limited to +/- 185 degrees.]
+    theta1 = atan2(yc, xc)  [Note: per the kr210.urdf.xacro file the angle is limited to +/- 185 degrees.]
 
 **Theta 2:**  
 
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 
     # SSS triangle for theta2 and theta3 (Law of Cosines)
-	   # sides
-	      A = 1.501
+    # sides
+       A = 1.501
        B = sqrt(pow((sqrt(WC[0]*WC[0] + WC[1]*WC[1]) - 0.35), 2) + pow((WC[2] - 0.75), 2))
        C = 1.25
     # angles
@@ -131,8 +131,8 @@ The point zc could be considered to be the wrist center of a spherical wrist. To
        b = acos((A*A + C*C - B*B) / (2*A*C))
        c = acos((A*A + B*B - C*C) / (2*A*B))
 
-       θ2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35), limited between -45 and 85 degrees
-       θ3 = (pi/2 - b + 0.036), limited between -210 and 65 degrees
+       theta2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35), limited between -45 and 85 degrees
+       theta3 = (pi/2 - b + 0.036), limited between -210 and 65 degrees
 
 **Theta 4, 5, and 6:**  
 
@@ -144,27 +144,25 @@ Insert image calculations for Theta 4, 5, 6
         R3_6 = R0_3.inv(method="LU") * ROT_EE
 
 	# Euler angles from rotation matrix  
-	θ4 = atan2(R3_6[2,2], -R3_6[0,2]), limited between -350 and 350 degrees
-        θ5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]*R3_6[2, 2]), R3_6[1, 2]), limited between -125 and 125 degrees
-        θ6 = atan2(-R3_6[1,1],R3_6[1,0]), limited between -350 and 350 degrees
+        theta4 = atan2(R3_6[2,2], -R3_6[0,2]), limited between -350 and 350 degrees
+        theta5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]*R3_6[2, 2]), R3_6[1, 2]), limited between -125 and 125 degrees
+        theta6 = atan2(-R3_6[1,1],R3_6[1,0]), limited between -350 and 350 degrees
 ___
 
 <strong>
 Project Implementation
- 
-Fill in the IK_server.py file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. A screenshot of the completed pick and place process is included.
- 
-IK_server.py must contain properly commented code. The robot must track the planned trajectory and successfully complete pick and place operation. Your writeup must include explanation for the code and a discussion on the results, and a screenshot of the completed pick and place process.
 </strong>
 
 Insert code explanations
-![GitHub Logo](/images/logo.png)
-
-Insert discussion of results
-![GitHub Logo](/images/logo.png)
-
-####Insert screenshot of completed process
 
 I was able to get 9/10 cylinders in the bucket with my code.
-
 ![Final Run](/images/FinalRun.jpg)
+
+Insert discussion of results
+
+The robot moved very efficiently.  THe number of moves to get to the target and drop zone was too large to be optimal.  However, the robot did successfully complete the pick and place the vast majority of the time.
+
+
+
+
+
