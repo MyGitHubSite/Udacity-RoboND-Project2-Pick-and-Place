@@ -146,7 +146,7 @@ We can use the Law of Cosines to calculate theta 2 and theta 3:
         
         R3_6 = R0_3.inv(method="LU") * ROT_EE
 
-#### Euler angles from rotation matrix can then be found: 
+#### Euler angles from the R3_6 rotation matrix can then be found: 
         theta4 = atan2(R3_6[2,2], -R3_6[0,2]), limited between -350 and 350 degrees
         theta5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]*R3_6[2, 2]), R3_6[1, 2]), limited between -125 and 125 degrees
         theta6 = atan2(-R3_6[1,1],R3_6[1,0]), limited between -350 and 350 degrees
