@@ -78,7 +78,7 @@ The Modified DH parameter table above was plugged into the DH Transformation Mat
 ___
 ##
 <Strong>
-**Inverse Kinematics
+**Inverse Kinematics  
 </strong>
 
 <strong>
@@ -87,9 +87,9 @@ Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse
 Based on the geometric Inverse Kinematics method described here, breakdown the IK problem into Position and Orientation problems. Derive the equations for individual joint angles. Your writeup must contain details about the steps you took to arrive at those equations. Add figures where necessary. If any given joint has multiple solutions, select the best solution and provide explanation about your choice (Hint: Observe the active robot workspace in this project and the fact that some joints have physical limits).
 </strong>
 
-Since the last three joints are revolute and their joint axes intersect at a single point, we have a case of spherical wrist with joint_5 being the common intersection point and hence the wrist center.  We can kinematically decouple the IK problem into Inverse Position and Inverse Orientation 
+Since the last three joints are revolute and their joint axes intersect at a single point, we have a spherical wrist with Joint 5 being the common intersection point and hence the wrist center.  We can kinematically decouple the IK problem into Inverse Position and Inverse Orientation 
 
-The position of the wrist centre is governed by the first three joints while the last three joints orient the end-effector as needed.  
+The position of the wrist center is governed by the first three joints while the last three joints orient the end-effector as needed.  
 
 ![Spherical Wrist](/images/Spherical%20Wrist.jpg) 
 
@@ -114,8 +114,9 @@ The point zc could be considered to be the wrist center of a spherical wrist. We
 
 θ1=atan2(yc,xc)
 
-
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
+
+Insert image calculations for Theta 4, 5 6
 ___
 
 <strong>
