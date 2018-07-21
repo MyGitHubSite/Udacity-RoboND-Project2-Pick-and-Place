@@ -99,7 +99,7 @@ The position of the wrist center is governed by the first three joints while the
 #### Wrist Center Location
     WC = EE - (0.303) * ROT_EE[:,2]
 ___
-#### Calcuation of individual joint angles
+#### Calcuation of individual joint angles:
 
 **Theta 1:**  
 
@@ -109,7 +109,7 @@ The point <strong>z<sub>c</sub></strong> could be considered to be the wrist cen
 
     theta1 = atan2(yc, xc)  [Note: per the kr210.urdf.xacro file the angle is limited to +/- 185 degrees.]
 
-**Theta 2and 3:**  
+**Theta 2 and 3:**  
 
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 
