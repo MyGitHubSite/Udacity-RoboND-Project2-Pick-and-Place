@@ -43,7 +43,7 @@ G | 0 | 0 | 0.303 |  q7
 <strong>theta<sub>i</sub></strong> = angle between <strong>x<sub>i-1</sub></strong> and <strong>x<sub>i</sub></strong> measured about <strong>z<sub>i</sub></strong> axis using right hand rule  
 for <strong>i</strong>=2 there is a -90 degree constant offset between <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub></strong>.
 
-Note: <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong>values were obtained from the kr210.urdf.xacro file.  
+Note: <strong>a</strong>, <strong>d</strong>, and <strong>alpha</strong> values were obtained from the kr210.urdf.xacro file.  
 ___
 
 The Modified DH parameter table above was plugged into the DH Transformation Matrix below to derive individual link to link transform matrices.
