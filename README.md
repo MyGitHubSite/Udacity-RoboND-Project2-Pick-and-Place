@@ -109,7 +109,7 @@ The position of the wrist center is governed by the first three joints while the
 ___
 #### Calcuation of individual joint angles
 
-**Theta 1:  
+**Theta 1:**  
 
 ![Theta1](/images/Theta1.jpg)
 
@@ -117,7 +117,7 @@ The point zc could be considered to be the wrist center of a spherical wrist. To
 
     θ1 = atan2(yc, xc)  [Note: per the kr210.urdf.xacro file the angle is limited to +/- 185 degrees.]
 
-**Theta 2
+**Theta 2:**  
 
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 
@@ -134,17 +134,17 @@ The point zc could be considered to be the wrist center of a spherical wrist. To
        θ2 = (pi/2 - a - atan2(WC[2]-0.75, sqrt(WC[0]*WC[0]+WC[1]*WC[1])-0.35), limited between -45 and 85 degrees
        θ3 = (pi/2 - b + 0.036), limited between -210 and 65 degrees
 
-** Theta 4, 5, and 6
+**Theta 4, 5, and 6:**  
 
 Insert image calculations for Theta 4, 5, 6
 
-	# Extract rotation matrix R0_3 from transformation matrix T0_3 then substitute angles q1-3
-	R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
-    	R0_3 = R0_3.evalf(subs={q1: theta1, q2: theta2, q3:theta3})
-	R3_6 = R0_3.inv(method="LU") * ROT_EE
+	# Extract rotation matrix R0_3 from transformation matrix T0_3 then substitute angles q1-3  
+        R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
+        R0_3 = R0_3.evalf(subs={q1: theta1, q2: theta2, q3:theta3})
+        R3_6 = R0_3.inv(method="LU") * ROT_EE
 
-	# Euler angles from rotation matrix
-        θ4 = atan2(R3_6[2,2], -R3_6[0,2]), limited between -350 and 350 degrees
+	# Euler angles from rotation matrix  
+	θ4 = atan2(R3_6[2,2], -R3_6[0,2]), limited between -350 and 350 degrees
         θ5 = atan2(sqrt(R3_6[0, 2]*R3_6[0, 2] + R3_6[2, 2]*R3_6[2, 2]), R3_6[1, 2]), limited between -125 and 125 degrees
         θ6 = atan2(-R3_6[1,1],R3_6[1,0]), limited between -350 and 350 degrees
 ___
