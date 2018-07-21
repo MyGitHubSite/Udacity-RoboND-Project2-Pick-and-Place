@@ -150,7 +150,7 @@ We can use the Law of Cosines to calculate theta 2 and theta 3:
 ___
 
 <strong>
-Project Implementation  
+Project Implementation:    
 </strong>
 
 I was able to get the VM Ware environment set up on my local machine.  First off, I ran the demo and observed the behavior of the robot.  Also, I fiddled around with the parameters in Rviz to visualize some extra movements.
