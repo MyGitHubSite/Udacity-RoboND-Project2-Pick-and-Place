@@ -88,6 +88,8 @@ Based on the geometric Inverse Kinematics method described here, breakdown the I
 
 Since the last three joints are revolute and their joint axes intersect at a single point, we have a case of spherical wrist with joint_5 being the common intersection point and hence the wrist center.  We can kinematically decouple the IK problem into Inverse Position and Inverse Orientation 
 
+The position of the wrist centre is governed by the first three joints.
+
 Insert image of spherical wrist
 
 
