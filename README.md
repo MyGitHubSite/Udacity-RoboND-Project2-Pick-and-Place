@@ -21,7 +21,7 @@ Start with the Kuka KR210 zero-configuration graph (all joint angles are assumed
 
 ![Kuka KR210 Graph](/images/IMG_0084%20(2).jpg) 
 
-Hand-drawn labeling of: joints, joint axes, links, positive and <strong>x</strong> axes(common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, non-zero link lengths (<strong>a</strong> values), link offsets (<strong>d</strong> values) and <strong>alpha</strong> (<strong>z</strong> twist angle), <strong>q</strong> values.  
+Hand-drawn labeling of: joints, joint axes, links, positive and <strong>x</strong> axes (common normals between <strong>z<sub>i-1</sub></strong> and <strong>z<sub>i</sub></strong>), and reference frame origins (intersection of <strong>x<sub>i</sub></strong> and <strong>z<sub>i</sub></strong>) on graph, non-zero link lengths (<strong>a</strong> values), link offsets (<strong>d</strong> values), <strong>alpha</strong> (<strong>z</strong> twist angles), and <strong>q</strong> values.  
 
 ![GitHub Logo](/images/AllLabels.jpg)  
 
