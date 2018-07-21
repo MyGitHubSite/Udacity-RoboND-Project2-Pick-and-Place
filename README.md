@@ -110,6 +110,11 @@ Insert image of spherical wrist
 Insert equations for individual joint angles.  
 ![Theta1](/images/Theta1.jpg)
 
+The point zc could be considered to be the wrist center of a spherical wrist. We will assume that the Cartesian coordinates of zc have already been calculated. To find 𝜃1, we need to project zc onto the ground plane - a trivial task since it only requires setting the z-coordinate = 0! Thus,
+
+θ1=atan2(yc,xc)
+
+
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 ___
 
