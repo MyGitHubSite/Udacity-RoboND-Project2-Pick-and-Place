@@ -108,7 +108,7 @@ Insert image of spherical wrist
     WC = EE - (0.303) * ROT_EE[:,2]
 
 Insert equations for individual joint angles.
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/images/Theta1.jpg)
 
 ![Theta2 Theta3](/images/Theta2Theta3.jpg) 
 ___
